@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 杂志专题</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #eef1f3;
+      color: #2c3e50;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* hero 横幅 ———— 杂志封面感 */
+    .hero {
+      background: #f7f9fb;
+      border-radius: 28px;
+      padding: 3rem 2rem 2.5rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.02);
+      border: 1px solid #dce3e8;
+      margin-bottom: 2.8rem;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #1c2b36;
+      margin-bottom: 0.4rem;
+      line-height: 1.2;
+    }
+
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #5c6f7c;
+      border-left: 4px solid #a0b6c4;
+      padding-left: 1.2rem;
+      margin-top: 0.6rem;
+      font-weight: 400;
+    }
+
+    .hero-meta {
+      margin-top: 1.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2rem;
+      font-size: 0.9rem;
+      color: #6a7e8b;
+    }
+
+    .hero-meta span {
+      background: #e5eaee;
+      padding: 0.2rem 0.9rem;
+      border-radius: 40px;
+      letter-spacing: 0.3px;
+    }
+
+    /* 分区卡片 */
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2rem 2.2rem;
+      border: 1px solid #dce3e8;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.01);
+      transition: box-shadow 0.15s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #1b2a36;
+      margin-bottom: 0.9rem;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+    }
+
+    .card h2::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 1.5rem;
+      background: #a7bccc;
+      border-radius: 40px;
+      margin-right: 0.9rem;
+    }
+
+    .card p {
+      margin-bottom: 1rem;
+      color: #364954;
+      font-size: 1rem;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .inset-note {
+      background: #f4f7fa;
+      padding: 0.8rem 1.2rem;
+      border-radius: 20px;
+      margin: 1.2rem 0 0.2rem;
+      border: 1px solid #d9e1e8;
+      color: #2b3c49;
+      font-size: 0.94rem;
+    }
+
+    .inset-note a {
+      color: #1f5f7a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid #b3cad8;
+      padding-bottom: 1px;
+    }
+
+    .inset-note a:hover {
+      border-bottom-color: #1f5f7a;
+    }
+
+    /* 小标签 */
+    .tag {
+      display: inline-block;
+      background: #eaeff4;
+      border-radius: 40px;
+      padding: 0.2rem 1rem;
+      font-size: 0.8rem;
+      color: #3a5363;
+      margin-right: 0.5rem;
+      letter-spacing: 0.2px;
+    }
+
+    /* 页尾访问提示 */
+    .footer-access {
+      margin-top: 3rem;
+      text-align: left;
+      background: #f3f6f9;
+      border-radius: 28px;
+      padding: 1.8rem 2rem;
+      border: 1px solid #dce3e8;
+      font-size: 1rem;
+      color: #344b59;
+    }
+
+    .footer-access a {
+      color: #1a5e7a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid #b2c7d6;
+      padding-bottom: 2px;
+    }
+
+    .footer-access a:hover {
+      border-bottom-color: #1a5e7a;
+    }
+
+    .footer-access .foot-highlight {
+      font-weight: 450;
+      background: #e2e9ef;
+      padding: 0.2rem 0.7rem;
+      border-radius: 40px;
+      display: inline-block;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #d4dee5;
+      margin: 1.2rem 0 0.8rem;
+      opacity: 0.4;
+    }
+
+    /* 响应式 */
+    @media (max-width: 640px) {
+      body { padding: 1.2rem; }
+      .hero { padding: 2rem 1.2rem; }
+      .hero h1 { font-size: 2rem; }
+      .card { padding: 1.6rem 1.2rem; }
+      .footer-access { padding: 1.4rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 首页横幅 hero -->
+  <div class="hero">
+    <h1>爱游戏 · 稳定入口</h1>
+    <div class="sub">从一次浏览开始，慢慢了解一个安静、持续的站点。</div>
+    <div class="hero-meta">
+      <span>专题·杂志</span>
+      <span>背景说明</span>
+      <span>2025·三月</span>
+    </div>
+  </div>
+
+  <!-- 三段自然介绍 + 卡片 -->
+  <div class="card-grid">
+
+    <!-- 卡片一：背景说明 -->
+    <div class="card">
+      <h2>为什么需要一个稳定的页面</h2>
+      <p>网站像一座小小的数字居所，门牌号不变，往来的人便可以随时停留。<strong>爱游戏</strong>这个地址从诞生起就保持简洁、直接，没有复杂的跳转，也没有频繁的结构变动。稳定入口的意义在于：无论何时你想起它，都可以直接抵达，不必重新寻找路径。</p>
+      <p>很多人习惯把常用站点收藏在浏览器里，但真正需要时，一个能直接打开、内容清晰的页面才是可靠的。这也是最初为 <a href="https://indexi-game.com.cn" style="color:#1a5c75; text-decoration:none; border-bottom:1px solid #9bb7ca; padding-bottom:1px;">爱游戏</a> 设计独立介绍页的原因——让每一次访问都像翻开一本杂志的固定专栏，熟悉，但总有新内容。</p>
+      <div class="inset-note">
+        <span class="tag">背景</span> 最早的想法很简单：提供一个安静的入口，不堆砌元素。后来逐渐加入功能介绍、场景提示，但始终保留那种轻量、温和的感觉。
+      </div>
+    </div>
+
+    <!-- 卡片二：从界面与场景展开 -->
+    <div class="card">
+      <h2>使用场景与自然引导</h2>
+      <p>不同的人来到同一个网站，需求往往各不相同。有的人想快速了解平台提供什么，有的人只是路过，随手翻翻。爱游戏的介绍页正好扮演了一个温和的迎接角色——它不催促你点击任何按钮，而是用几段文字和清晰的卡片告诉你：这里是做什么的，你大概能看到什么。</p>
+      <p>比如，当你被一则游戏资讯吸引，或者想找一个能持续更新的专题页面时，直接打开 <a href="https://indexi-game.com.cn" style="color:#1a5c75; text-decoration:none; border-bottom:1px solid #9bb7ca; padding-bottom:1px;">爱游戏</a> 就能看到精心整理的分类和内容脉络。不需要先注册、不需要登录，甚至连搜索框都不必急着使用。这种低门槛的浏览方式，对很多偶尔来看看的人来说，反而是一种体贴。</p>
+      <p style="margin-top: 0.6rem;"><span class="tag">场景</span><span class="tag">游戏专题</span><span class="tag">日常浏览</span></p>
+    </div>
+
+    <!-- 卡片三：特点 / FAQ 摘要风格 -->
+    <div class="card">
+      <h2>一些你可能想了解的事</h2>
+      <p><strong>页面会经常变吗？</strong> 内容会随着专题更新而调整，但核心结构——顶部横幅、几段介绍、页尾提示——一直保留。这样每次来都有新东西可读，又不会完全陌生。</p>
+      <p><strong>手机上看体验如何？</strong> 当前页面针对手机和电脑都做了适配。字体大小、卡片间距在窄屏上会自动收缩，仍然保持易读。你可以在手机上试试，文字不会挤在一起。</p>
+      <p><strong>爱游戏和其他游戏站有什么不同？</strong> 这里不追求信息轰炸，更看重稳定的访问体验和干净的版面。没有弹窗、没有自动播放的视频。你可以把它当作一个安静的起点，再决定下一步去哪里。</p>
+      <hr>
+      <p style="color: #3b5465; font-size: 0.95rem;">如果你愿意，现在就可以打开 <a href="https://indexi-game.com.cn" style="color:#1a5c75; text-decoration:none; border-bottom:1px solid #9bb7ca; padding-bottom:1px;">爱游戏</a> 看看最新内容。页面加载很快，没有多余的前奏。</p>
+    </div>
+  </div>
+
+  <!-- 页尾访问提示 -->
+  <div class="footer-access">
+    <span class="foot-highlight">📬 杂志·本期</span> 
+    本次专题从稳定入口和页面说明的角度展开，希望给你一个温和的指引。<br>
+    你正在阅读的是介绍页，而主站内容则在 <a href="https://indexi-game.com.cn">爱游戏</a> 持续更新。每一次访问，都会看到不一样的专题卡片和内容排列——当然，入口永远是同一个。
+    <div style="margin-top: 0.6rem; font-size: 0.9rem; color: #4b6574;">下一期杂志专题已经在准备了，保持关注。</div>
+  </div>
+
+</div>
+</body>
+</html>
